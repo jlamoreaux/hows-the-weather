@@ -1,0 +1,18 @@
+@mixin flex($direction: row, $wrap: nowrap, $justify-content: normal) {
+    display: flex;
+    display: -moz-flex;
+    display: -ms-flex;
+
+    flex-direction: $direction;
+    -ms-flex-direction: $direction;
+    -webkit-flex-direction: $direction;
+    -moz-flex-direction: $direction;
+
+    justify-content: $justify-content;
+    -webkit-justify-content: $justify-content;
+    -moz-justify-content: $justify-content;
+    -ms-flex-pack: $justify-content;
+
+    flex-wrap: $wrap;
+
+}

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How's the Weather?</title>
+</head>
+<body>
+    <header class="header">
+        <h1 class="header__title">How's the Weather?</title>
+    </header>
+    <main class="main">
+        <form action="" class="form main__form" id="main__form">
+            <h2 class="form__title">Where are you going?</h2>
+            <label for="destination" class="form__label">Destination</label>
+            <input type="text" class="form__input form__text" id="form__location" name="destination" value="">
+            <label for="date" class="form__label">Date of Travel</label>
+            <input type="date" class="form__input form__date" id="form__date" name="date">
+            <button class="form__button submit" id="main__form--submit">Submit</button>
+        </form>
+    </main>
+</body>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAmyHkKK8LCevQpken1PUspepd5rA1rbLk&libraries=places&callback=initMap" async defer></script>
+</html>
