@@ -1,7 +1,7 @@
 {
   "name": "hows-the-weather",
   "version": "1.0.0",
-  "description": "Plan for your trip by looking at the upcoming forcast",
+  "description": "Plan for your trip by looking at the upcoming forecast",
   "main": "src/server/server.js",
   "scripts": {
     "test": "jest",
