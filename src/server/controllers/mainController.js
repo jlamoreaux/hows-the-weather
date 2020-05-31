@@ -14,9 +14,8 @@ exports.getHomepage = (req, res) => {
 }
 
 exports.getWeather = async (req, res) => {
-    let locationArr = req.body.location.split(' ');
-    console.log(locationArr);
-    const location = locationArr.join("").split(",").join("+");
+    let locationArr = req.body.location.split(' ').join('').split(',');
+    const location = locationArr.join("+");
     const geocode = await getLatLng(location);
     const images = await getPlaceImage(locationArr);
 
@@ -27,15 +26,13 @@ exports.getWeather = async (req, res) => {
 
     const weather = await getWeatherbit(latLng);
 
-    const data = { images: images.data, weather: weather.data };
+    const date = new Date(req.body.date);
+    const now = new Date();
+    const dif = (Math.abs(Math.ceil((date - now)/(1000*60*60*24))));
 
-    try {
-        console.log(data);
-        res.send(data);
-    } catch (error) {
-        console.log(error);
-        res.send(error);
-    }
+    const data = { images: images.data, weather: weather.data.data[dif], location: req.body.location };
+
+    res.send(data);
 }
 
 const getPlaceImage = async (location) => {
@@ -48,14 +45,6 @@ const getPlaceImage = async (location) => {
                 return result;
             }
         }
-    } catch (error) {
-        console.log(error);
-    }
-}
-
-const getOpenWeather = async (location) => {
-    try {
-        return await axios.get(`${openWeatherUrl}lat=${location.lat}&lon=${location.lng}&exclude=current,minutely,hoUrly&appid=${weatherKey}`);
     } catch (error) {
         console.log(error);
     }

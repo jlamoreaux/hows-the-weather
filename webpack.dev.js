@@ -1,13 +1,15 @@
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const {CleanWebpackPlugin} = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const NodeExternals = require('webpack-node-externals');
 
 module.exports = {
   entry: "./src/client/js/index.js",
   devtool: "source-map",
   mode: "development",
   stats: "verbose",
+  target: "node",
   devServer: {
     port: 7000,
   },
