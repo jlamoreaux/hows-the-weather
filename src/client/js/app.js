@@ -45,6 +45,8 @@ export const listenForSubmit = () => {
   });
 }
 
+
+// TODO: Create option to convert from Celcius to Fahrenheit
 /**
  * @description - Adds a card containing trip information to the DOM
  * @param {Object} data - Object including data to add to card. {date, image, weather, location}
@@ -68,8 +70,8 @@ const addTrip = async (data) => {
                     <span class="weather__description--label">Forecast:</span>
                     <ul class="weather__items">
                         <li class="weather__description__item">${data.weather.weather.description}</li>
-                        <li class="weather__description__item weather__temp--hi">High: <span class="temp">${data.weather.high_temp}</span></li>
-                        <li class="weather__description__item weather__temp--lo">Low: <span class="temp">${data.weather.low_temp}</span></li>
+                        <li class="weather__description__item weather__temp--hi">High: <span class="temp">${data.weather.high_temp}°C</span></li>
+                        <li class="weather__description__item weather__temp--lo">Low: <span class="temp">${data.weather.low_temp}°C</span></li>
                     </ul>
                 </div>
             </div>

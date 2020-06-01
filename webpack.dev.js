@@ -5,7 +5,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const NodeExternals = require('webpack-node-externals');
 
 module.exports = {
-  entry: "./src/client/js/index.js",
+  entry: "./src/client/index.js",
   devtool: "source-map",
   mode: "development",
   stats: "verbose",

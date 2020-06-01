@@ -1,6 +1,6 @@
-import "../style/main.scss";
-import { $, $$, formatDate } from "./helpers";
-import { placeInput, listenForSubmit } from './DOMSetup';
+import "./style/main.scss";
+import { $, $$, formatDate } from "./js/helpers";
+import { placeInput, listenForSubmit } from './js/app';
 import "core-js/stable";
 import "regenerator-runtime/runtime";
 
