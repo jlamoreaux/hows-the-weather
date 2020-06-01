@@ -1,3 +1,6 @@
+import "core-js/stable";
+import "regenerator-runtime/runtime";
+
 /**
  * @description - Shortcut for "document.querySelector()"
  * @param {String} elem - String containing one or more selectors to match
@@ -33,3 +36,28 @@ export const formatDate = (date) => {
 
     return [year, month, day].join('-');
 }
+
+/**
+ * @description - Simple POST request function
+ * @param {String} route - Route of API to POST to
+ * @param {Object} data - Object containing data to POST
+ */
+export const postData = async (route, data) => {
+  const result = await fetch(route, {
+    method: "POST",
+    mode: "cors",
+    credentials: "same-origin",
+    headers: {
+      "content-type": "application/json",
+    },
+    body: JSON.stringify(data),
+  });
+
+  try {
+    const response = await result.json();
+    return response;
+  } catch (error) {
+    console.log(`OH NO! There was an error...`, error);
+    return 0;
+  }
+};

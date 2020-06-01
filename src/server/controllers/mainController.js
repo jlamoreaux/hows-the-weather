@@ -1,3 +1,6 @@
+require("core-js/stable");
+require("regenerator-runtime/runtime");
+
 const path = require('path');
 const openWeatherUrl = 'http://api.openweathermap.org/data/2.5/onecall?';
 const geoNamesUrl = 'http://api.geonames.org/geoCodeAddressJSON?';
@@ -28,11 +31,15 @@ exports.getWeather = async (req, res) => {
 
     const date = new Date(req.body.date);
     const now = new Date();
-    const dif = (Math.abs(Math.ceil((date - now)/(1000*60*60*24))));
+    const dif = this.getDif(now, date);
 
     const data = { images: images.data, weather: weather.data.data[dif], location: req.body.location };
 
     res.send(data);
+}
+
+exports.getDif = (now, future) => {
+    return Math.abs(Math.ceil((future - now) / (1000 * 60 * 60 * 24)));
 }
 
 const getPlaceImage = async (location) => {
@@ -65,4 +72,3 @@ const getLatLng = async (location) => {
         console.log(error);
     }
 }
-
