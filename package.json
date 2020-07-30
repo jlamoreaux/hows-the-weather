@@ -9,7 +9,7 @@
     "build": "webpack --config webpack.prod.js",
     "start-dev": "nodemon ./src/server/server.js",
     "start": "node ./src/server/server.js",
-    "heroku-postbuild": "webpack -p --config webpack.config.js --progress"
+    "heroku-postbuild": "webpack -p --config webpack.prod.js --progress"
   },
   "repository": {
     "type": "git",
