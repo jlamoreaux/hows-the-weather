@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/jlamoreaux/hows-the-weather#readme",
   "dependencies": {
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "babel-loader": "^8.1.0",
     "body-parser": "^1.19.0",
     "core-js": "^3.6.5",
